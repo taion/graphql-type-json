@@ -14,7 +14,7 @@ function parseLiteral(ast) {
     case Kind.FLOAT:
       return parseFloat(ast.value);
     case Kind.OBJECT: {
-      const value = {};
+      const value = Object.create(null);
       ast.fields.forEach(field => {
         value[field.name.value] = parseLiteral(field.value);
       });
