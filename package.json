@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/taion/graphql-type-json#readme",
   "peerDependencies": {
-    "graphql": "^0.4.0 || ^0.5.0 || ^0.6.0 || ^0.7.0"
+    "graphql": "^0.4.0 || ^0.5.0 || ^0.6.0 || ^0.7.0 || ^0.8.0"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
@@ -38,7 +38,7 @@
     "eslint": "^3.4.0",
     "eslint-config-airbnb-base": "^5.0.3",
     "eslint-plugin-import": "^1.14.0",
-    "graphql": "^0.7.0",
+    "graphql": "^0.8.0",
     "mocha": "^3.0.2",
     "rimraf": "^2.5.4"
   }
