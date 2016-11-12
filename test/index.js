@@ -57,7 +57,7 @@ describe('GraphQLJSON', () => {
   });
 
   describe('parseValue', () => {
-    it('should support parsing values', done => {
+    it('should support parsing values', (done) => {
       graphql(
         schema,
         'query ($arg: JSON) { value(arg: $arg) }',
@@ -72,8 +72,7 @@ describe('GraphQLJSON', () => {
   });
 
   describe('parseLiteral', () => {
-    it('should support parsing literals', done => {
-      // Null values are not supported in GraphQL literals.
+    it('should support parsing literals', (done) => {
       graphql(schema, `
         {
           value(arg: {
@@ -82,12 +81,14 @@ describe('GraphQLJSON', () => {
             float: 3.14,
             true: true,
             false: false,
+            null: null,
             object: {
               string: "string",
               int: 3,
               float: 3.14,
               true: true,
               false: false,
+              null: null,
             },
             array: [
               "string",
@@ -95,6 +96,7 @@ describe('GraphQLJSON', () => {
               3.14,
               true,
               false,
+              null,
             ],
           }),
         }
@@ -105,12 +107,14 @@ describe('GraphQLJSON', () => {
           float: 3.14,
           true: true,
           false: false,
+          null: null,
           object: {
             string: 'string',
             int: 3,
             float: 3.14,
             true: true,
             false: false,
+            null: null,
           },
           array: [
             'string',
@@ -118,6 +122,7 @@ describe('GraphQLJSON', () => {
             3.14,
             true,
             false,
+            null,
           ],
         });
         done();
