@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/taion/graphql-type-json#readme",
   "peerDependencies": {
-    "graphql": ">=0.4.0"
+    "graphql": ">=0.4.0 || ^0.8.0-b"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
