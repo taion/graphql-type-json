@@ -2,7 +2,11 @@ import { GraphQLScalarType } from 'graphql';
 import { Kind } from 'graphql/language';
 
 function identity(value) {
-  return value;
+  try {
+    return JSON.parse(value);
+  } catch (e) {
+    return value;
+  }
 }
 
 function parseLiteral(ast) {
