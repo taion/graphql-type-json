@@ -63,7 +63,7 @@ describe('GraphQLJSON', () => {
         'query ($arg: JSON) { value(arg: $arg) }',
         null,
         null,
-        { arg: FIXTURE }
+        { arg: FIXTURE },
       ).then(({ data }) => {
         expect(data.value).to.eql(FIXTURE);
         done();
