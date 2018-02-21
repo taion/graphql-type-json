@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import GraphQLJSON from '../src';
@@ -52,7 +51,7 @@ describe('GraphQLJSON', () => {
 
   describe('serialize', () => {
     it('should support serialization', () => {
-      expect(GraphQLJSON.serialize(FIXTURE)).to.eql(FIXTURE);
+      expect(GraphQLJSON.serialize(FIXTURE)).toEqual(FIXTURE);
     });
   });
 
@@ -65,7 +64,7 @@ describe('GraphQLJSON', () => {
         null,
         { arg: FIXTURE },
       ).then(({ data }) => {
-        expect(data.value).to.eql(FIXTURE);
+        expect(data.value).toEqual(FIXTURE);
       }),
     );
   });
@@ -100,7 +99,7 @@ describe('GraphQLJSON', () => {
           }),
         }
       `).then(({ data }) => {
-        expect(data.value).to.eql({
+        expect(data.value).toEqual({
           string: 'string',
           int: 3,
           float: 3.14,
@@ -127,15 +126,25 @@ describe('GraphQLJSON', () => {
       }),
     );
 
+    it('should handle null literals', () =>
+      graphql(schema, `
+        {
+          value(arg: null)
+        }
+      `).then(({ data }) => {
+        expect(data).toEqual({
+          value: null,
+        });
+      }),
+    );
 
     it('should reject invalid literals', () =>
       graphql(schema, `
         {
-          value(arg: NaN){
-            string: "string"
+          value(arg: INVALID)
         }
       `).then(({ data }) => {
-        expect(data).to.be.undefined;
+        expect(data).toBeUndefined();
       }),
     );
   });

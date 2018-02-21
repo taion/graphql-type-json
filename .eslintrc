@@ -1,6 +1,9 @@
 {
-  "extends": "airbnb-base",
-  "rules": {
-    "max-len": [2, 79]
-  }
+  "extends": [
+    "4catalyzer",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ]
 }
