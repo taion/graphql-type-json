@@ -28,7 +28,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**"
-    ]
+    ],
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
