@@ -23,8 +23,10 @@ function parseLiteral(ast) {
     }
     case Kind.LIST:
       return ast.values.map(parseLiteral);
-    default:
+    case Kind.NULL:
       return null;
+    default:
+      return undefined;
   }
 }
 

@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import GraphQLJSON from '../src';
@@ -52,12 +51,12 @@ describe('GraphQLJSON', () => {
 
   describe('serialize', () => {
     it('should support serialization', () => {
-      expect(GraphQLJSON.serialize(FIXTURE)).to.eql(FIXTURE);
+      expect(GraphQLJSON.serialize(FIXTURE)).toEqual(FIXTURE);
     });
   });
 
   describe('parseValue', () => {
-    it('should support parsing values', (done) => {
+    it('should support parsing values', () =>
       graphql(
         schema,
         'query ($arg: JSON) { value(arg: $arg) }',
@@ -65,14 +64,13 @@ describe('GraphQLJSON', () => {
         null,
         { arg: FIXTURE },
       ).then(({ data }) => {
-        expect(data.value).to.eql(FIXTURE);
-        done();
-      });
-    });
+        expect(data.value).toEqual(FIXTURE);
+      }),
+    );
   });
 
   describe('parseLiteral', () => {
-    it('should support parsing literals', (done) => {
+    it('should support parsing literals', () =>
       graphql(schema, `
         {
           value(arg: {
@@ -101,7 +99,7 @@ describe('GraphQLJSON', () => {
           }),
         }
       `).then(({ data }) => {
-        expect(data.value).to.eql({
+        expect(data.value).toEqual({
           string: 'string',
           int: 3,
           float: 3.14,
@@ -125,8 +123,29 @@ describe('GraphQLJSON', () => {
             null,
           ],
         });
-        done();
-      });
-    });
+      }),
+    );
+
+    it('should handle null literals', () =>
+      graphql(schema, `
+        {
+          value(arg: null)
+        }
+      `).then(({ data }) => {
+        expect(data).toEqual({
+          value: null,
+        });
+      }),
+    );
+
+    it('should reject invalid literals', () =>
+      graphql(schema, `
+        {
+          value(arg: INVALID)
+        }
+      `).then(({ data }) => {
+        expect(data).toBeUndefined();
+      }),
+    );
   });
 });
