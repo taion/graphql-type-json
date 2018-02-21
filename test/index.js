@@ -57,7 +57,7 @@ describe('GraphQLJSON', () => {
   });
 
   describe('parseValue', () => {
-    it('should support parsing values', (done) => {
+    it('should support parsing values', () =>
       graphql(
         schema,
         'query ($arg: JSON) { value(arg: $arg) }',
@@ -66,13 +66,12 @@ describe('GraphQLJSON', () => {
         { arg: FIXTURE },
       ).then(({ data }) => {
         expect(data.value).to.eql(FIXTURE);
-        done();
-      });
-    });
+      }),
+    );
   });
 
   describe('parseLiteral', () => {
-    it('should support parsing literals', (done) => {
+    it('should support parsing literals', () =>
       graphql(schema, `
         {
           value(arg: {
@@ -125,8 +124,19 @@ describe('GraphQLJSON', () => {
             null,
           ],
         });
-        done();
-      });
-    });
+      }),
+    );
+
+
+    it('should reject invalid literals', () =>
+      graphql(schema, `
+        {
+          value(arg: NaN){
+            string: "string"
+        }
+      `).then(({ data }) => {
+        expect(data).to.be.undefined;
+      }),
+    );
   });
 });
