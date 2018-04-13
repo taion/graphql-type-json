@@ -5,7 +5,7 @@ function identity(value) {
   return value;
 }
 
-function parseLiteral(ast) {
+function parseLiteral(ast, variables) {
   switch (ast.kind) {
     case Kind.STRING:
     case Kind.BOOLEAN:
@@ -15,16 +15,20 @@ function parseLiteral(ast) {
       return parseFloat(ast.value);
     case Kind.OBJECT: {
       const value = Object.create(null);
-      ast.fields.forEach((field) => {
-        value[field.name.value] = parseLiteral(field.value);
+      ast.fields.forEach(field => {
+        value[field.name.value] = parseLiteral(field.value, variables);
       });
 
       return value;
     }
     case Kind.LIST:
-      return ast.values.map(parseLiteral);
+      return ast.values.map(n => parseLiteral(n, variables));
     case Kind.NULL:
       return null;
+    case Kind.VARIABLE: {
+      const name = ast.name.value;
+      return variables ? variables[name] : undefined;
+    }
     default:
       return undefined;
   }
