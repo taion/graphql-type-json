@@ -1,4 +1,4 @@
-import { graphql, GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { graphql, GraphQLInt, GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import GraphQLJSON from '../src';
 
@@ -46,6 +46,7 @@ describe('GraphQLJSON', () => {
           },
         },
       }),
+      types: [GraphQLInt],
     });
   });
 
@@ -59,7 +60,7 @@ describe('GraphQLJSON', () => {
     it('should support parsing values', () =>
       graphql(
         schema,
-        'query ($arg: JSON) { value(arg: $arg) }',
+        'query ($arg: JSON!) { value(arg: $arg) }',
         null,
         null,
         { arg: FIXTURE },
@@ -72,17 +73,17 @@ describe('GraphQLJSON', () => {
   describe('parseLiteral', () => {
     it('should support parsing literals', () =>
       graphql(schema, `
-        {
+        query ($intValue: Int = 3) {
           value(arg: {
             string: "string",
-            int: 3,
+            int: $intValue,
             float: 3.14,
             true: true,
             false: false,
             null: null,
             object: {
               string: "string",
-              int: 3,
+              int: $intValue,
               float: 3.14,
               true: true,
               false: false,
@@ -90,7 +91,7 @@ describe('GraphQLJSON', () => {
             },
             array: [
               "string",
-              3,
+              $intValue,
               3.14,
               true,
               false,
