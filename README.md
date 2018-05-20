@@ -6,6 +6,33 @@ JSON scalar type for [GraphQL.js](https://github.com/graphql/graphql-js).
 
 ## Usage
 
+This package exports a JSON scalar GraphQL.js type:
+
+```js
+import GraphQLJSON from 'graphql-type-json';
+```
+
+### Programmatically-constructed schemas
+
+You can use this in a programmatically-constructed schema as with any other scalar type:
+
+```js
+import { GraphQLObjectType } from 'graphql';
+import GraphQLJSON from 'graphql-type-json';
+
+export default new GraphQLObjectType({
+  name: 'MyType',
+
+  fields: {
+    myField: { type: GraphQLJSON },
+  },
+});
+```
+
+### SDL with [GraphQL-tools](https://github.com/apollographql/graphql-tools)
+
+When using the SDL with GraphQL-tools, define `GraphQLJSON` as the resolver for the appropriate scalar type in your schema:
+
 ```js
 import { makeExecutableSchema } from 'graphql-tools';
 import GraphQLJSON from 'graphql-type-json';
@@ -13,23 +40,19 @@ import GraphQLJSON from 'graphql-type-json';
 const typeDefs = `
 scalar JSON
 
-type Foo {
-  someField: JSON
+type MyType {
+  myField: JSON
 }
 
-type Query {
-  foo: Foo
-}
+# ...
 `;
 
 const resolvers = {
   JSON: GraphQLJSON
 };
 
-const schema = makeExecutableSchema({ typeDefs, resolvers });
+export default makeExecutableSchema({ typeDefs, resolvers });
 ```
-
-Now you can pass JS objects as params :tada:
 
 [build-badge]: https://img.shields.io/travis/taion/graphql-type-json/master.svg
 [build]: https://travis-ci.org/taion/graphql-type-json
