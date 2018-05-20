@@ -48,7 +48,7 @@ type MyType {
 `;
 
 const resolvers = {
-  JSON: GraphQLJSON
+  JSON: GraphQLJSON,
 };
 
 export default makeExecutableSchema({ typeDefs, resolvers });
