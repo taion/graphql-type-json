@@ -1,8 +1,10 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/env", {
       "loose": true
     }]
   ],
-  "plugins": ["add-module-exports"]
+  "plugins": [
+    "add-module-exports"
+  ]
 }
