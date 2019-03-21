@@ -1769,9 +1769,9 @@ escodegen@^1.9.1:
     source-map "~0.6.1"
 
 eslint-config-4catalyzer-jest@^1.1.2:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-jest/-/eslint-config-4catalyzer-jest-1.2.0.tgz#5654e9eae8c5075b707687c3c685de4b1f1a2019"
-  integrity sha512-HHlPDgixOkUSWdUizjQtDnD6E9gsIn7Zo2q9OHmhhevm+G2OUIHsdnfsSL/J+7ZEFq86cy3lDj4KD2kUrTfb+A==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-jest/-/eslint-config-4catalyzer-jest-1.2.1.tgz#bd7240ec03dcd2fd2a8790bc4a4387187cff3d7f"
+  integrity sha512-bFMnXFV4GIMMStkW49pumPyQO0q6hAORb/EgVe0ewHbCCtNZiWOLYdpMPRw+Bq3Tw6Y8JaG4SCcxOZdP3rql6Q==
 
 eslint-config-4catalyzer@^0.8.0:
   version "0.8.0"
