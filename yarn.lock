@@ -1774,9 +1774,9 @@ eslint-config-4catalyzer-jest@^1.1.2:
   integrity sha512-bFMnXFV4GIMMStkW49pumPyQO0q6hAORb/EgVe0ewHbCCtNZiWOLYdpMPRw+Bq3Tw6Y8JaG4SCcxOZdP3rql6Q==
 
 eslint-config-4catalyzer@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer/-/eslint-config-4catalyzer-0.8.0.tgz#80291a523a69da516e6e5a174b5d90d82eb1da67"
-  integrity sha512-kF7eDI3QTvKEqAe9wvouFqfhH5D8ToDDVfCKkCIUDUmPqudBofbg31FcWiLogfVwwFvPc3YAUxmLv8liEupBuQ==
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer/-/eslint-config-4catalyzer-0.8.1.tgz#3a961138724576f5e4241e4fc93ff9fff80c768a"
+  integrity sha512-8TjIPs5FZDPcagNTDENSkpvQzpKpITarA315ZwRKd40YsTe5f5QZQP39OHLAx84A/ZXErt1UdKYMvMXBKjuglQ==
   dependencies:
     babel-eslint "^10.0.1"
     eslint-config-airbnb-base "^13.1.0"
