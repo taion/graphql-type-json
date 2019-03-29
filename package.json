@@ -1,6 +1,6 @@
 {
   "name": "graphql-type-json",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "JSON scalar type for GraphQL.js",
   "files": [
     "lib"
