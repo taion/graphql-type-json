@@ -1,7 +1,7 @@
 {
   "name": "graphql-type-json",
   "version": "0.2.4",
-  "description": "JSON scalar type for GraphQL.js",
+  "description": "JSON scalar types for GraphQL.js",
   "files": [
     "lib"
   ],
@@ -58,7 +58,6 @@
     "@babel/preset-env": "^7.3.4",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.5.0",
-    "babel-plugin-add-module-exports": "^1.0.0",
     "codecov": "^3.2.0",
     "eslint": "^5.15.3",
     "eslint-config-4catalyzer": "^0.8.0",
