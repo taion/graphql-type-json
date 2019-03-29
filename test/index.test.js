@@ -64,8 +64,9 @@ describe('GraphQLJSON', () => {
           }
         `,
         FIXTURE,
-      ).then(({ data }) => {
+      ).then(({ data, errors }) => {
         expect(data.rootValue).toEqual(FIXTURE);
+        expect(errors).toBeUndefined();
       }));
   });
 
@@ -83,8 +84,9 @@ describe('GraphQLJSON', () => {
         {
           arg: FIXTURE,
         },
-      ).then(({ data }) => {
+      ).then(({ data, errors }) => {
         expect(data.value).toEqual(FIXTURE);
+        expect(errors).toBeUndefined();
       }));
   });
 
@@ -115,11 +117,12 @@ describe('GraphQLJSON', () => {
             )
           }
         `,
-      ).then(({ data }) => {
+      ).then(({ data, errors }) => {
         expect(data.value).toEqual(FIXTURE);
+        expect(errors).toBeUndefined();
       }));
 
-    it('should handle null literals', () =>
+    it('should handle null literal', () =>
       graphql(
         schema,
         /* GraphQL */ `
@@ -127,13 +130,29 @@ describe('GraphQLJSON', () => {
             value(arg: null)
           }
         `,
-      ).then(({ data }) => {
+      ).then(({ data, errors }) => {
         expect(data).toEqual({
           value: null,
         });
+        expect(errors).toBeUndefined();
       }));
 
-    it('should reject invalid literals', () =>
+    it('should handle list literal', () =>
+      graphql(
+        schema,
+        /* GraphQL */ `
+          {
+            value(arg: [])
+          }
+        `,
+      ).then(({ data, errors }) => {
+        expect(data).toEqual({
+          value: [],
+        });
+        expect(errors).toBeUndefined();
+      }));
+
+    it('should reject invalid literal', () =>
       graphql(
         schema,
         /* GraphQL */ `
@@ -165,11 +184,12 @@ describe('GraphQLJSONObject', () => {
           }
         `,
         FIXTURE,
-      ).then(({ data }) => {
+      ).then(({ data, errors }) => {
         expect(data.rootValue).toEqual(FIXTURE);
+        expect(errors).toBeUndefined();
       }));
 
-    it('should reject invalid values', () =>
+    it('should reject string value', () =>
       graphql(
         schema,
         /* GraphQL */ `
@@ -178,6 +198,20 @@ describe('GraphQLJSONObject', () => {
           }
         `,
         'foo',
+      ).then(({ data, errors }) => {
+        expect(data.rootValue).toBeNull();
+        expect(errors).toBeDefined();
+      }));
+
+    it('should reject array value', () =>
+      graphql(
+        schema,
+        /* GraphQL */ `
+          query {
+            rootValue
+          }
+        `,
+        [],
       ).then(({ data, errors }) => {
         expect(data.rootValue).toBeNull();
         expect(errors).toBeDefined();
@@ -198,11 +232,12 @@ describe('GraphQLJSONObject', () => {
         {
           arg: FIXTURE,
         },
-      ).then(({ data }) => {
+      ).then(({ data, errors }) => {
         expect(data.value).toEqual(FIXTURE);
+        expect(errors).toBeUndefined();
       }));
 
-    it('should reject invalid values', () =>
+    it('should reject string value', () =>
       graphql(
         schema,
         /* GraphQL */ `
@@ -214,6 +249,24 @@ describe('GraphQLJSONObject', () => {
         null,
         {
           arg: 'foo',
+        },
+      ).then(({ data, errors }) => {
+        expect(data).toBeUndefined();
+        expect(errors).toBeDefined();
+      }));
+
+    it('should reject array value', () =>
+      graphql(
+        schema,
+        /* GraphQL */ `
+          query($arg: JSONObject!) {
+            value(arg: $arg)
+          }
+        `,
+        null,
+        null,
+        {
+          arg: [],
         },
       ).then(({ data, errors }) => {
         expect(data).toBeUndefined();
@@ -248,16 +301,30 @@ describe('GraphQLJSONObject', () => {
             )
           }
         `,
-      ).then(({ data }) => {
+      ).then(({ data, errors }) => {
         expect(data.value).toEqual(FIXTURE);
+        expect(errors).toBeUndefined();
       }));
 
-    it('should reject invalid literals', () =>
+    it('should reject string literal', () =>
       graphql(
         schema,
         /* GraphQL */ `
           {
             value(arg: "foo")
+          }
+        `,
+      ).then(({ data, errors }) => {
+        expect(data).toBeUndefined();
+        expect(errors).toBeDefined();
+      }));
+
+    it('should reject array literal', () =>
+      graphql(
+        schema,
+        /* GraphQL */ `
+          {
+            value(arg: [])
           }
         `,
       ).then(({ data, errors }) => {
