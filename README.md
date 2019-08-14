@@ -24,6 +24,8 @@ These types can also be imported as follows using CommonJS:
 const { GraphQLJSON, GraphQLJSONObject } = require('graphql-type-json');
 ```
 
+`GraphQLJSON` can represent any JSON-serializable value, including scalars, arrays, and objects. `GraphQLJSONObject` represents specifically JSON objects, which covers many practical use cases for JSON scalars.
+
 ### Programmatically-constructed schemas
 
 You can use this in a programmatically-constructed schema as with any other scalar type:
