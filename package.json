@@ -60,7 +60,7 @@
     "babel-jest": "^24.5.0",
     "codecov": "^3.2.0",
     "eslint": "^5.15.3",
-    "eslint-config-4catalyzer": "^0.8.0",
+    "eslint-config-4catalyzer": "^1.0.0",
     "eslint-config-4catalyzer-jest": "^1.1.2",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.16.0",

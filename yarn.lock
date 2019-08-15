@@ -1574,10 +1574,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-confusing-browser-globals@^1.0.5:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.7.tgz#5ae852bd541a910e7ffb2dbb864a2d21a36ad29b"
-  integrity sha512-cgHI1azax5ATrZ8rJ+ODDML9Fvu67PimB6aNxBrc/QwSaDaM9eTfIEUHx3bBLJJ82ioSb+/5zfsMCCEJax3ByQ==
+confusing-browser-globals@^1.0.7:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.8.tgz#93ffec1f82a6e2bf2bc36769cc3a92fa20e502f3"
+  integrity sha512-lI7asCibVJ6Qd3FGU7mu4sfG4try4LX3+GVS+Gv8UlrEf2AeW57piecapnog2UHZSbcX/P/1UDWVaTsblowlZg==
 
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
@@ -1906,20 +1906,20 @@ eslint-config-4catalyzer-jest@^1.1.2:
   resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-jest/-/eslint-config-4catalyzer-jest-1.4.1.tgz#d600bda4f83d4ad839c32de77841bbcb458aaf04"
   integrity sha512-ikN9e5m6hgIzdRfBL6qiZRGrF9dUv+UcA+oJa2qPGHxqEUKz7SsJMI9QOCxc9HYTIZKv6eUhazhwNcbOepb5iQ==
 
-eslint-config-4catalyzer@^0.8.0:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer/-/eslint-config-4catalyzer-0.8.2.tgz#f6de02500ae23754f66a7efffe7b0a8cf91a1914"
-  integrity sha512-Pd8hwdbRsEEl5wB86efN2i4B0g5mG+HfcrLBxgEAWpkjt5GWwYyg7/1ooft+CqCDSo5mPdfg820XQEIYIQAbhw==
+eslint-config-4catalyzer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer/-/eslint-config-4catalyzer-1.0.0.tgz#514b5eb3bfdb4c3411d813a3b169130ff1f5cbcf"
+  integrity sha512-WHJjg3CGc7j65LQs+w2XmQJ2r+ICv6PSmF/EzpSevsGZjRLTK1n7jVJqCY/g+mdCiURNiw7aJjpaRw4WMZU0Qg==
   dependencies:
     babel-eslint "^10.0.2"
-    eslint-config-airbnb-base "^13.2.0"
+    eslint-config-airbnb-base "^14.0.0"
 
-eslint-config-airbnb-base@^13.2.0:
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-13.2.0.tgz#f6ea81459ff4dec2dda200c35f1d8f7419d57943"
-  integrity sha512-1mg/7eoB4AUeB0X1c/ho4vb2gYkNH8Trr/EgCT/aGmKhhG+F6vF5s8+iRBlWAzFIAphxIdp3YfEKgEl0f9Xg+w==
+eslint-config-airbnb-base@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-14.0.0.tgz#8a7bcb9643d13c55df4dd7444f138bf4efa61e17"
+  integrity sha512-2IDHobw97upExLmsebhtfoD3NAKhV4H0CJWP3Uprd/uk+cHuWYOczPVxQ8PxLFUAw7o3Th1RAU8u1DoUpr+cMA==
   dependencies:
-    confusing-browser-globals "^1.0.5"
+    confusing-browser-globals "^1.0.7"
     object.assign "^4.1.0"
     object.entries "^1.1.0"
 
