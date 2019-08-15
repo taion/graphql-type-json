@@ -1901,10 +1901,10 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-4catalyzer-jest@^1.1.2:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-jest/-/eslint-config-4catalyzer-jest-1.4.1.tgz#d600bda4f83d4ad839c32de77841bbcb458aaf04"
-  integrity sha512-ikN9e5m6hgIzdRfBL6qiZRGrF9dUv+UcA+oJa2qPGHxqEUKz7SsJMI9QOCxc9HYTIZKv6eUhazhwNcbOepb5iQ==
+eslint-config-4catalyzer-jest@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-4catalyzer-jest/-/eslint-config-4catalyzer-jest-2.0.0.tgz#324b94b674ed70be1c585e0a13a37a88c12d8925"
+  integrity sha512-pVgw/plW574JKKY5e23LWbLBdEjWNw5AMSwdgdQ+8iyuQrmfCQXtCuGJFHraS2SpnHGzz+FT26apoZOp6Smrvw==
 
 eslint-config-4catalyzer@^0.8.0:
   version "0.8.2"
