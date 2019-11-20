@@ -163,7 +163,11 @@ describe('GraphQLJSON', () => {
         `,
       ).then(({ data, errors }) => {
         expect(data).toBeUndefined();
-        expect(errors).toBeDefined();
+        expect(errors).toMatchInlineSnapshot(`
+          Array [
+            [GraphQLError: Expected type JSON, found INVALID.],
+          ]
+        `);
       }));
   });
 });
@@ -201,7 +205,11 @@ describe('GraphQLJSONObject', () => {
         'foo',
       ).then(({ data, errors }) => {
         expect(data.rootValue).toBeNull();
-        expect(errors).toBeDefined();
+        expect(errors).toMatchInlineSnapshot(`
+          Array [
+            [GraphQLError: JSONObject cannot represent non-object value: foo],
+          ]
+        `);
       }));
 
     it('should reject array value', () =>
@@ -215,7 +223,11 @@ describe('GraphQLJSONObject', () => {
         [],
       ).then(({ data, errors }) => {
         expect(data.rootValue).toBeNull();
-        expect(errors).toBeDefined();
+        expect(errors).toMatchInlineSnapshot(`
+          Array [
+            [GraphQLError: JSONObject cannot represent non-object value: ],
+          ]
+        `);
       }));
   });
 
@@ -253,7 +265,11 @@ describe('GraphQLJSONObject', () => {
         },
       ).then(({ data, errors }) => {
         expect(data).toBeUndefined();
-        expect(errors).toBeDefined();
+        expect(errors).toMatchInlineSnapshot(`
+          Array [
+            [GraphQLError: Variable "$arg" got invalid value "foo"; Expected type JSONObject. JSONObject cannot represent non-object value: foo],
+          ]
+        `);
       }));
 
     it('should reject array value', () =>
@@ -271,7 +287,11 @@ describe('GraphQLJSONObject', () => {
         },
       ).then(({ data, errors }) => {
         expect(data).toBeUndefined();
-        expect(errors).toBeDefined();
+        expect(errors).toMatchInlineSnapshot(`
+          Array [
+            [GraphQLError: Variable "$arg" got invalid value []; Expected type JSONObject. JSONObject cannot represent non-object value: ],
+          ]
+        `);
       }));
   });
 
@@ -317,7 +337,11 @@ describe('GraphQLJSONObject', () => {
         `,
       ).then(({ data, errors }) => {
         expect(data).toBeUndefined();
-        expect(errors).toBeDefined();
+        expect(errors).toMatchInlineSnapshot(`
+          Array [
+            [GraphQLError: Expected type JSONObject, found "foo".],
+          ]
+        `);
       }));
 
     it('should reject array literal', () =>
@@ -330,7 +354,11 @@ describe('GraphQLJSONObject', () => {
         `,
       ).then(({ data, errors }) => {
         expect(data).toBeUndefined();
-        expect(errors).toBeDefined();
+        expect(errors).toMatchInlineSnapshot(`
+          Array [
+            [GraphQLError: Expected type JSONObject, found [].],
+          ]
+        `);
       }));
   });
 });
