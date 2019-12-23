@@ -53,12 +53,12 @@
     "graphql": ">=0.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "babel-jest": "^24.9.0",
     "codecov": "^3.6.1",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-config-4catalyzer": "^1.0.1",
     "eslint-config-4catalyzer-jest": "^2.0.2",
     "eslint-config-prettier": "^6.7.0",
