@@ -53,7 +53,7 @@
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^25.1.0",
     "codecov": "^3.6.1",
     "eslint": "^6.8.0",
     "eslint-config-4catalyzer": "^1.0.2",
@@ -64,7 +64,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "graphql": "^14.5.8",
     "husky": "^4.0.10",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "lint-staged": "^10.0.0",
     "prettier": "^1.19.1"
   }
