@@ -50,22 +50,22 @@
     "graphql": ">=0.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "babel-jest": "^25.1.0",
-    "codecov": "^3.6.2",
+    "codecov": "^3.6.4",
     "eslint": "^6.8.0",
     "eslint-config-4catalyzer": "^1.0.2",
     "eslint-config-4catalyzer-jest": "^2.0.3",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-import": "^2.20.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jest": "^23.6.0",
     "eslint-plugin-prettier": "^3.1.2",
     "graphql": "^14.6.0",
     "husky": "^4.2.1",
     "jest": "^25.1.0",
-    "lint-staged": "^10.0.2",
+    "lint-staged": "^10.0.7",
     "prettier": "^1.19.1"
   }
 }
