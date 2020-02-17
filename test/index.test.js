@@ -1,8 +1,8 @@
 import {
-  graphql,
   GraphQLInt,
   GraphQLObjectType,
   GraphQLSchema,
+  graphql,
 } from 'graphql';
 
 // eslint-disable-next-line import/no-named-as-default
