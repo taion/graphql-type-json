@@ -51,21 +51,21 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
     "babel-jest": "^25.1.0",
     "codecov": "^3.6.5",
     "eslint": "^6.8.0",
     "eslint-config-4catalyzer": "^1.1.1",
-    "eslint-config-4catalyzer-jest": "^2.0.4",
+    "eslint-config-4catalyzer-jest": "^2.0.5",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jest": "^23.8.0",
+    "eslint-plugin-jest": "^23.8.1",
     "eslint-plugin-prettier": "^3.1.2",
     "graphql": "^14.6.0",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
-    "lint-staged": "^10.0.7",
+    "lint-staged": "^10.0.8",
     "prettier": "^1.19.1"
   }
 }
