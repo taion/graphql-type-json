@@ -40,7 +40,7 @@ function createSchema(type) {
         },
         rootValue: {
           type,
-          resolve: obj => obj,
+          resolve: (obj) => obj,
         },
       },
     }),

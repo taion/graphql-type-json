@@ -17,7 +17,7 @@ function ensureObject(value) {
 
 function parseObject(ast, variables) {
   const value = Object.create(null);
-  ast.fields.forEach(field => {
+  ast.fields.forEach((field) => {
     // eslint-disable-next-line no-use-before-define
     value[field.name.value] = parseLiteral(field.value, variables);
   });
@@ -36,7 +36,7 @@ function parseLiteral(ast, variables) {
     case Kind.OBJECT:
       return parseObject(ast, variables);
     case Kind.LIST:
-      return ast.values.map(n => parseLiteral(n, variables));
+      return ast.values.map((n) => parseLiteral(n, variables));
     case Kind.NULL:
       return null;
     case Kind.VARIABLE: {
