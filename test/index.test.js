@@ -165,7 +165,7 @@ describe('GraphQLJSON', () => {
         expect(data).toBeUndefined();
         expect(errors).toMatchInlineSnapshot(`
           Array [
-            [GraphQLError: Expected type JSON, found INVALID.],
+            [GraphQLError: Expected value of type "JSON", found INVALID; JSON cannot represent value: INVALID],
           ]
         `);
       }));
@@ -267,7 +267,7 @@ describe('GraphQLJSONObject', () => {
         expect(data).toBeUndefined();
         expect(errors).toMatchInlineSnapshot(`
           Array [
-            [GraphQLError: Variable "$arg" got invalid value "foo"; Expected type JSONObject. JSONObject cannot represent non-object value: foo],
+            [GraphQLError: Variable "$arg" got invalid value "foo"; Expected type "JSONObject". JSONObject cannot represent non-object value: foo],
           ]
         `);
       }));
@@ -289,7 +289,7 @@ describe('GraphQLJSONObject', () => {
         expect(data).toBeUndefined();
         expect(errors).toMatchInlineSnapshot(`
           Array [
-            [GraphQLError: Variable "$arg" got invalid value []; Expected type JSONObject. JSONObject cannot represent non-object value: ],
+            [GraphQLError: Variable "$arg" got invalid value []; Expected type "JSONObject". JSONObject cannot represent non-object value: ],
           ]
         `);
       }));
@@ -339,7 +339,7 @@ describe('GraphQLJSONObject', () => {
         expect(data).toBeUndefined();
         expect(errors).toMatchInlineSnapshot(`
           Array [
-            [GraphQLError: Expected type JSONObject, found "foo".],
+            [GraphQLError: Expected value of type "JSONObject", found "foo"; JSONObject cannot represent non-object value: "foo"],
           ]
         `);
       }));
@@ -356,7 +356,7 @@ describe('GraphQLJSONObject', () => {
         expect(data).toBeUndefined();
         expect(errors).toMatchInlineSnapshot(`
           Array [
-            [GraphQLError: Expected type JSONObject, found [].],
+            [GraphQLError: Expected value of type "JSONObject", found []; JSONObject cannot represent non-object value: []],
           ]
         `);
       }));
