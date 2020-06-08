@@ -8,8 +8,9 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib --delete-dir-on-start",
+    "cp-ts": "cp src/index.d.ts lib",
     "lint": "eslint src test",
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && npm run cp-ts",
     "tdd": "jest --watch",
     "test": "npm run lint && npm run testonly -- --coverage",
     "testonly": "jest --runInBand --verbose"
