@@ -52,6 +52,8 @@ export const GraphQLJSON = new GraphQLScalarType({
   name: 'JSON',
   description:
     'The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).',
+  specifiedByUrl:
+    'http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf',
   serialize: identity,
   parseValue: identity,
   parseLiteral: (ast, variables) => parseLiteral('JSON', ast, variables),
@@ -63,6 +65,8 @@ export const GraphQLJSONObject = new GraphQLScalarType({
   name: 'JSONObject',
   description:
     'The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).',
+  specifiedByUrl:
+    'http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf',
   serialize: ensureObject,
   parseValue: ensureObject,
   parseLiteral: (ast, variables) => {
