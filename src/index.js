@@ -47,7 +47,7 @@ function parseLiteral(typeName, ast, variables) {
 }
 
 // This named export is intended for users of CommonJS. Users of ES modules
-// should instead use the default export.
+//  should instead use the default export.
 export const GraphQLJSON = new GraphQLScalarType({
   name: 'JSON',
   description:
