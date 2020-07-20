@@ -57,14 +57,14 @@
   },
   "homepage": "https://github.com/taion/graphql-type-json#readme",
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "babel-jest": "^26.1.0",
-    "codecov": "^3.7.0",
+    "codecov": "^3.7.1",
     "cpy-cli": "^3.1.1",
     "dtslint": "^3.6.12",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "eslint-config-4catalyzer": "^1.1.2",
     "eslint-config-4catalyzer-jest": "^2.0.7",
     "eslint-config-prettier": "^6.11.0",
@@ -76,7 +76,7 @@
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "peerDependencies": {
     "graphql": ">=0.8.0"
