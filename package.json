@@ -58,7 +58,7 @@
   "homepage": "https://github.com/taion/graphql-type-json#readme",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.0",
+    "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "babel-jest": "^26.2.2",
     "codecov": "^3.7.2",
