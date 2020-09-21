@@ -74,9 +74,9 @@
     "graphql": "^15.3.0",
     "husky": "^4.3.0",
     "jest": "^26.4.2",
-    "lint-staged": "^10.3.0",
-    "prettier": "^2.1.1",
-    "typescript": "^4.0.2"
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
   },
   "peerDependencies": {
     "graphql": ">=0.8.0"
