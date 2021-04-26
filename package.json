@@ -69,7 +69,7 @@
     "eslint-config-4catalyzer-jest": "^2.0.10",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-prettier": "^3.3.1",
     "graphql": "^15.5.0",
     "husky": "^4.3.8",
