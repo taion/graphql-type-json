@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015", "esnext.asynciterable"],
+    "strict": true,
+    "module": "CommonJS",
+    "types": ["jest"],
+    "declaration": true,
+    "moduleResolution": "node",
+    "baseUrl": "src"
+  },
+  "exclude": ["**/*.test.ts"]
+}
