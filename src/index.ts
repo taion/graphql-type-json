@@ -1,11 +1,12 @@
 import { GraphQLScalarType } from 'graphql';
-import { Kind, print } from 'graphql/language';
+import { Maybe } from 'graphql/jsutils/Maybe';
+import { Kind, ObjectValueNode, print, ValueNode } from 'graphql/language';
 
-function identity(value) {
+function identity<T>(value: T) {
   return value;
 }
 
-function ensureObject(value) {
+function ensureObject(value: any) {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) {
     throw new TypeError(
       `JSONObject cannot represent non-object value: ${value}`,
@@ -15,7 +16,11 @@ function ensureObject(value) {
   return value;
 }
 
-function parseObject(typeName, ast, variables) {
+function parseObject(
+  typeName: string,
+  ast: ObjectValueNode,
+  variables: Maybe<{ [key: string]: any }>,
+) {
   const value = Object.create(null);
   ast.fields.forEach((field) => {
     // eslint-disable-next-line no-use-before-define
@@ -25,7 +30,11 @@ function parseObject(typeName, ast, variables) {
   return value;
 }
 
-function parseLiteral(typeName, ast, variables) {
+function parseLiteral(
+  typeName: string,
+  ast: ValueNode,
+  variables: Maybe<{ [key: string]: any }>,
+): any {
   switch (ast.kind) {
     case Kind.STRING:
     case Kind.BOOLEAN:

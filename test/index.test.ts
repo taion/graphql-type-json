@@ -3,9 +3,8 @@ import {
   GraphQLObjectType,
   GraphQLSchema,
   graphql,
+  GraphQLScalarType,
 } from 'graphql';
-
-// eslint-disable-next-line import/no-named-as-default
 import GraphQLJSON, { GraphQLJSONObject } from '../src';
 
 const FIXTURE = {
@@ -26,7 +25,7 @@ const FIXTURE = {
   array: ['string', 3, 3.14, true, false, null],
 };
 
-function createSchema(type) {
+function createSchema(type: GraphQLScalarType) {
   return new GraphQLSchema({
     query: new GraphQLObjectType({
       name: 'Query',
@@ -49,7 +48,7 @@ function createSchema(type) {
 }
 
 describe('GraphQLJSON', () => {
-  let schema;
+  let schema: GraphQLSchema;
 
   beforeEach(() => {
     schema = createSchema(GraphQLJSON);
@@ -66,7 +65,7 @@ describe('GraphQLJSON', () => {
         `,
         FIXTURE,
       ).then(({ data, errors }) => {
-        expect(data.rootValue).toEqual(FIXTURE);
+        expect(data?.rootValue).toEqual(FIXTURE);
         expect(errors).toBeUndefined();
       }));
   });
@@ -76,7 +75,7 @@ describe('GraphQLJSON', () => {
       graphql(
         schema,
         /* GraphQL */ `
-          query($arg: JSON!) {
+          query ($arg: JSON!) {
             value(arg: $arg)
           }
         `,
@@ -86,7 +85,7 @@ describe('GraphQLJSON', () => {
           arg: FIXTURE,
         },
       ).then(({ data, errors }) => {
-        expect(data.value).toEqual(FIXTURE);
+        expect(data?.value).toEqual(FIXTURE);
         expect(errors).toBeUndefined();
       }));
   });
@@ -96,7 +95,7 @@ describe('GraphQLJSON', () => {
       graphql(
         schema,
         /* GraphQL */ `
-          query($intValue: Int = 3) {
+          query ($intValue: Int = 3) {
             value(
               arg: {
                 string: "string"
@@ -119,7 +118,7 @@ describe('GraphQLJSON', () => {
           }
         `,
       ).then(({ data, errors }) => {
-        expect(data.value).toEqual(FIXTURE);
+        expect(data?.value).toEqual(FIXTURE);
         expect(errors).toBeUndefined();
       }));
 
@@ -173,7 +172,7 @@ describe('GraphQLJSON', () => {
 });
 
 describe('GraphQLJSONObject', () => {
-  let schema;
+  let schema: GraphQLSchema;
 
   beforeEach(() => {
     schema = createSchema(GraphQLJSONObject);
@@ -190,7 +189,7 @@ describe('GraphQLJSONObject', () => {
         `,
         FIXTURE,
       ).then(({ data, errors }) => {
-        expect(data.rootValue).toEqual(FIXTURE);
+        expect(data?.rootValue).toEqual(FIXTURE);
         expect(errors).toBeUndefined();
       }));
 
@@ -204,7 +203,7 @@ describe('GraphQLJSONObject', () => {
         `,
         'foo',
       ).then(({ data, errors }) => {
-        expect(data.rootValue).toBeNull();
+        expect(data?.rootValue).toBeNull();
         expect(errors).toMatchInlineSnapshot(`
           Array [
             [GraphQLError: JSONObject cannot represent non-object value: foo],
@@ -222,7 +221,7 @@ describe('GraphQLJSONObject', () => {
         `,
         [],
       ).then(({ data, errors }) => {
-        expect(data.rootValue).toBeNull();
+        expect(data?.rootValue).toBeNull();
         expect(errors).toMatchInlineSnapshot(`
           Array [
             [GraphQLError: JSONObject cannot represent non-object value: ],
@@ -236,7 +235,7 @@ describe('GraphQLJSONObject', () => {
       graphql(
         schema,
         /* GraphQL */ `
-          query($arg: JSONObject!) {
+          query ($arg: JSONObject!) {
             value(arg: $arg)
           }
         `,
@@ -246,7 +245,7 @@ describe('GraphQLJSONObject', () => {
           arg: FIXTURE,
         },
       ).then(({ data, errors }) => {
-        expect(data.value).toEqual(FIXTURE);
+        expect(data?.value).toEqual(FIXTURE);
         expect(errors).toBeUndefined();
       }));
 
@@ -254,7 +253,7 @@ describe('GraphQLJSONObject', () => {
       graphql(
         schema,
         /* GraphQL */ `
-          query($arg: JSONObject!) {
+          query ($arg: JSONObject!) {
             value(arg: $arg)
           }
         `,
@@ -276,7 +275,7 @@ describe('GraphQLJSONObject', () => {
       graphql(
         schema,
         /* GraphQL */ `
-          query($arg: JSONObject!) {
+          query ($arg: JSONObject!) {
             value(arg: $arg)
           }
         `,
@@ -300,7 +299,7 @@ describe('GraphQLJSONObject', () => {
       graphql(
         schema,
         /* GraphQL */ `
-          query($intValue: Int = 3) {
+          query ($intValue: Int = 3) {
             value(
               arg: {
                 string: "string"
@@ -323,7 +322,7 @@ describe('GraphQLJSONObject', () => {
           }
         `,
       ).then(({ data, errors }) => {
-        expect(data.value).toEqual(FIXTURE);
+        expect(data?.value).toEqual(FIXTURE);
         expect(errors).toBeUndefined();
       }));
 
