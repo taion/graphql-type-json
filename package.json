@@ -62,7 +62,7 @@
     "@babel/preset-env": "^7.12.13",
     "babel-jest": "^26.6.3",
     "codecov": "^3.8.1",
-    "cpy-cli": "^3.1.1",
+    "cpy-cli": "^5.0.0",
     "dtslint": "^3.7.0",
     "eslint": "^7.19.0",
     "eslint-config-4catalyzer": "^1.1.5",
