@@ -67,7 +67,7 @@
     "eslint": "^7.19.0",
     "eslint-config-4catalyzer": "^1.1.5",
     "eslint-config-4catalyzer-jest": "^2.0.10",
-    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-prettier": "^3.3.1",
